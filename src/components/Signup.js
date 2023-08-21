@@ -6,14 +6,13 @@ import { useUser } from "../context/UserContext";
 
 function Signup() {
   const navigate = useNavigate();
-  const {setsrcon}= useUser();
+  const { setsrcon } = useUser();
   const [newuser, setnewuser] = useState({
     email: "",
     pwd: "",
     nombre: "",
     username: "",
-    biografia: "..."
-    
+    biografia: "...",
   });
   const [errmsg, seterrmsg] = useState("");
   const handleSubmit = async (e) => {
@@ -21,7 +20,11 @@ function Signup() {
     try {
       const response = await NewUser(newuser);
       if (response.data.status === "ok") {
-        Swal.fire("Listo!", `${response.data.message}`, "success");
+        Swal.fire(
+          "Listo!",
+          `Usuario creado correctamente, ahora inicia sesion!`,
+          "success"
+        );
         // console.log(response)
         navigate("/signin");
       }
@@ -39,10 +42,10 @@ function Signup() {
   };
 
   return (
-    <section className="signup-section" onClick={()=>setsrcon(false)}>
+    <section className="signup-section" onClick={() => setsrcon(false)}>
       <h1>Registrate</h1>
       <form onSubmit={handleSubmit} className="signup-form">
-      <div className="form-item">
+        <div className="form-item">
           <input
             onChange={HandleChange}
             name="nombre"
@@ -81,7 +84,6 @@ function Signup() {
           />
           <label htmlFor="pwd">Contraseña</label>
         </div>
-
 
         <div className="form-item">
           <textarea

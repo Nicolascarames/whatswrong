@@ -102,6 +102,9 @@ export const Privados = () => {
           />
           <button className="button-fancy-blue">Enviar</button>
         </form>
+        <p className="msj_privados">
+          Los mensajes privados tardan unos seg! se paciente, sorry !
+        </p>
       </article>
     </section>
   );

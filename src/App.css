@@ -24,6 +24,11 @@ li {
 .nopointer {
   cursor: default;
 }
+.msj_privados {
+  font-size: 0.7rem;
+  font-style: italic;
+  color: #2ea44f;
+}
 
 .header {
   width: 100%;
